@@ -53,3 +53,15 @@ This repository contains Java solutions for various Data Structures and Algorith
 40. Rotate Linked List to the Right by K Places  
 
 
+
+<!---LeetCode Topics Start-->
+# LeetCode Topics
+## Array
+|  |
+| ------- |
+| [0001-two-sum](https://github.com/thesameer87/Leetcode/tree/master/0001-two-sum) |
+## Hash Table
+|  |
+| ------- |
+| [0001-two-sum](https://github.com/thesameer87/Leetcode/tree/master/0001-two-sum) |
+<!---LeetCode Topics End-->
