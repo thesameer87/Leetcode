@@ -60,6 +60,7 @@ This repository contains Java solutions for various Data Structures and Algorith
 |  |
 | ------- |
 | [0001-two-sum](https://github.com/thesameer87/Leetcode/tree/master/0001-two-sum) |
+| [0486-predict-the-winner](https://github.com/thesameer87/Leetcode/tree/master/0486-predict-the-winner) |
 | [0628-maximum-product-of-three-numbers](https://github.com/thesameer87/Leetcode/tree/master/0628-maximum-product-of-three-numbers) |
 | [1464-maximum-product-of-two-elements-in-an-array](https://github.com/thesameer87/Leetcode/tree/master/1464-maximum-product-of-two-elements-in-an-array) |
 ## Hash Table
@@ -69,6 +70,7 @@ This repository contains Java solutions for various Data Structures and Algorith
 ## Math
 |  |
 | ------- |
+| [0486-predict-the-winner](https://github.com/thesameer87/Leetcode/tree/master/0486-predict-the-winner) |
 | [0628-maximum-product-of-three-numbers](https://github.com/thesameer87/Leetcode/tree/master/0628-maximum-product-of-three-numbers) |
 ## Sorting
 |  |
@@ -79,4 +81,16 @@ This repository contains Java solutions for various Data Structures and Algorith
 |  |
 | ------- |
 | [1464-maximum-product-of-two-elements-in-an-array](https://github.com/thesameer87/Leetcode/tree/master/1464-maximum-product-of-two-elements-in-an-array) |
+## Dynamic Programming
+|  |
+| ------- |
+| [0486-predict-the-winner](https://github.com/thesameer87/Leetcode/tree/master/0486-predict-the-winner) |
+## Recursion
+|  |
+| ------- |
+| [0486-predict-the-winner](https://github.com/thesameer87/Leetcode/tree/master/0486-predict-the-winner) |
+## Game Theory
+|  |
+| ------- |
+| [0486-predict-the-winner](https://github.com/thesameer87/Leetcode/tree/master/0486-predict-the-winner) |
 <!---LeetCode Topics End-->
