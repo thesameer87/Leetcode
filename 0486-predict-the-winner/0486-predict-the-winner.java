@@ -6,18 +6,11 @@ class Solution {
         if(left == right){
             return nums[left];
         }
-        int pickL = nums[left] + Math.min(solve(nums,left+2,right),solve(nums,left+1,right-1));
-        int pickR = nums[right] + Math.min(solve(nums,left+1,right-1),solve(nums,left,right-2));
+        int pickL = nums[left] - solve(nums,left+1,right);
+        int pickR = nums[right] - solve(nums,left,right-1);
         return Math.max(pickL,pickR);
     }
     public boolean predictTheWinner(int[] nums) {
-        int n = nums.length;
-        int sum = 0;
-        for(int i = 0; i<=n-1;i++){
-            sum+=nums[i];
-        }
-        int p1 = solve(nums,0,n-1);
-        int p2 = sum - p1;
-        return p1>=p2;
+        return solve(nums,0,nums.length-1) >=0;
     }
 }
