@@ -63,10 +63,12 @@ This repository contains Java solutions for various Data Structures and Algorith
 | [0486-predict-the-winner](https://github.com/thesameer87/Leetcode/tree/master/0486-predict-the-winner) |
 | [0628-maximum-product-of-three-numbers](https://github.com/thesameer87/Leetcode/tree/master/0628-maximum-product-of-three-numbers) |
 | [1464-maximum-product-of-two-elements-in-an-array](https://github.com/thesameer87/Leetcode/tree/master/1464-maximum-product-of-two-elements-in-an-array) |
+| [3026-maximum-good-subarray-sum](https://github.com/thesameer87/Leetcode/tree/master/3026-maximum-good-subarray-sum) |
 ## Hash Table
 |  |
 | ------- |
 | [0001-two-sum](https://github.com/thesameer87/Leetcode/tree/master/0001-two-sum) |
+| [3026-maximum-good-subarray-sum](https://github.com/thesameer87/Leetcode/tree/master/3026-maximum-good-subarray-sum) |
 ## Math
 |  |
 | ------- |
@@ -93,4 +95,8 @@ This repository contains Java solutions for various Data Structures and Algorith
 |  |
 | ------- |
 | [0486-predict-the-winner](https://github.com/thesameer87/Leetcode/tree/master/0486-predict-the-winner) |
+## Prefix Sum
+|  |
+| ------- |
+| [3026-maximum-good-subarray-sum](https://github.com/thesameer87/Leetcode/tree/master/3026-maximum-good-subarray-sum) |
 <!---LeetCode Topics End-->
