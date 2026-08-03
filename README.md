@@ -63,6 +63,7 @@ This repository contains Java solutions for various Data Structures and Algorith
 | [0486-predict-the-winner](https://github.com/thesameer87/Leetcode/tree/master/0486-predict-the-winner) |
 | [0628-maximum-product-of-three-numbers](https://github.com/thesameer87/Leetcode/tree/master/0628-maximum-product-of-three-numbers) |
 | [0877-stone-game](https://github.com/thesameer87/Leetcode/tree/master/0877-stone-game) |
+| [1406-stone-game-iii](https://github.com/thesameer87/Leetcode/tree/master/1406-stone-game-iii) |
 | [1464-maximum-product-of-two-elements-in-an-array](https://github.com/thesameer87/Leetcode/tree/master/1464-maximum-product-of-two-elements-in-an-array) |
 | [3026-maximum-good-subarray-sum](https://github.com/thesameer87/Leetcode/tree/master/3026-maximum-good-subarray-sum) |
 ## Hash Table
@@ -76,6 +77,7 @@ This repository contains Java solutions for various Data Structures and Algorith
 | [0486-predict-the-winner](https://github.com/thesameer87/Leetcode/tree/master/0486-predict-the-winner) |
 | [0628-maximum-product-of-three-numbers](https://github.com/thesameer87/Leetcode/tree/master/0628-maximum-product-of-three-numbers) |
 | [0877-stone-game](https://github.com/thesameer87/Leetcode/tree/master/0877-stone-game) |
+| [1406-stone-game-iii](https://github.com/thesameer87/Leetcode/tree/master/1406-stone-game-iii) |
 ## Sorting
 |  |
 | ------- |
@@ -90,6 +92,7 @@ This repository contains Java solutions for various Data Structures and Algorith
 | ------- |
 | [0486-predict-the-winner](https://github.com/thesameer87/Leetcode/tree/master/0486-predict-the-winner) |
 | [0877-stone-game](https://github.com/thesameer87/Leetcode/tree/master/0877-stone-game) |
+| [1406-stone-game-iii](https://github.com/thesameer87/Leetcode/tree/master/1406-stone-game-iii) |
 ## Recursion
 |  |
 | ------- |
@@ -99,8 +102,17 @@ This repository contains Java solutions for various Data Structures and Algorith
 | ------- |
 | [0486-predict-the-winner](https://github.com/thesameer87/Leetcode/tree/master/0486-predict-the-winner) |
 | [0877-stone-game](https://github.com/thesameer87/Leetcode/tree/master/0877-stone-game) |
+| [1406-stone-game-iii](https://github.com/thesameer87/Leetcode/tree/master/1406-stone-game-iii) |
 ## Prefix Sum
 |  |
 | ------- |
 | [3026-maximum-good-subarray-sum](https://github.com/thesameer87/Leetcode/tree/master/3026-maximum-good-subarray-sum) |
+## Minimax
+|  |
+| ------- |
+| [1406-stone-game-iii](https://github.com/thesameer87/Leetcode/tree/master/1406-stone-game-iii) |
+## Zero-Sum Game
+|  |
+| ------- |
+| [1406-stone-game-iii](https://github.com/thesameer87/Leetcode/tree/master/1406-stone-game-iii) |
 <!---LeetCode Topics End-->
