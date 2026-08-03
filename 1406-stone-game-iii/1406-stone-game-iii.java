@@ -1,28 +1,17 @@
 class Solution {
-    int n;
-    Integer dp[];
-    int solve(int nums [], int i){
-        if(i>=n){
-            return 0;
-        }
-        if(dp[i] != null){
-            return dp[i];
-        }
-        int result = nums[i] - solve(nums,i+1);
-
-        if(i+1<n){
-            result = Math.max(result,nums[i]+nums[i+1] - solve(nums,i+2));
-        }
-
-        if(i+2<n){
-            result = Math.max(result,nums[i]+nums[i+1]+nums[i+2] - solve(nums,i+3));
-        }
-        return dp[i] = result;
-    }
     public String stoneGameIII(int[] stoneValue) {
-        n = stoneValue.length;
-        dp = new Integer[n];
-        int diff = solve(stoneValue,0); //Alice - Bob
+        int n = stoneValue.length;
+        int dp[] = new int[n + 1];
+        for (int i = n - 1; i >= 0; i--) {
+            dp[i] = stoneValue[i] - dp[i + 1];
+            if (i + 1 < n) {
+                dp[i] = Math.max(dp[i], stoneValue[i] + stoneValue[i + 1] - dp[i + 2]);
+            }
+            if (i + 2 < n) {
+                dp[i] = Math.max(dp[i], stoneValue[i] + stoneValue[i + 1] + stoneValue[i + 2] - dp[i + 3]);
+            }
+        }
+        int diff = dp[0];
         if(diff>0){
             return "Alice";
         
