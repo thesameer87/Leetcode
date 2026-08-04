@@ -60,6 +60,7 @@ This repository contains Java solutions for various Data Structures and Algorith
 |  |
 | ------- |
 | [0001-two-sum](https://github.com/thesameer87/Leetcode/tree/master/0001-two-sum) |
+| [0063-unique-paths-ii](https://github.com/thesameer87/Leetcode/tree/master/0063-unique-paths-ii) |
 | [0486-predict-the-winner](https://github.com/thesameer87/Leetcode/tree/master/0486-predict-the-winner) |
 | [0628-maximum-product-of-three-numbers](https://github.com/thesameer87/Leetcode/tree/master/0628-maximum-product-of-three-numbers) |
 | [0877-stone-game](https://github.com/thesameer87/Leetcode/tree/master/0877-stone-game) |
@@ -93,6 +94,7 @@ This repository contains Java solutions for various Data Structures and Algorith
 ## Dynamic Programming
 |  |
 | ------- |
+| [0063-unique-paths-ii](https://github.com/thesameer87/Leetcode/tree/master/0063-unique-paths-ii) |
 | [0486-predict-the-winner](https://github.com/thesameer87/Leetcode/tree/master/0486-predict-the-winner) |
 | [0877-stone-game](https://github.com/thesameer87/Leetcode/tree/master/0877-stone-game) |
 | [1406-stone-game-iii](https://github.com/thesameer87/Leetcode/tree/master/1406-stone-game-iii) |
@@ -118,4 +120,8 @@ This repository contains Java solutions for various Data Structures and Algorith
 |  |
 | ------- |
 | [1406-stone-game-iii](https://github.com/thesameer87/Leetcode/tree/master/1406-stone-game-iii) |
+## Matrix
+|  |
+| ------- |
+| [0063-unique-paths-ii](https://github.com/thesameer87/Leetcode/tree/master/0063-unique-paths-ii) |
 <!---LeetCode Topics End-->
