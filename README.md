@@ -66,11 +66,13 @@ This repository contains Java solutions for various Data Structures and Algorith
 | [1406-stone-game-iii](https://github.com/thesameer87/Leetcode/tree/master/1406-stone-game-iii) |
 | [1464-maximum-product-of-two-elements-in-an-array](https://github.com/thesameer87/Leetcode/tree/master/1464-maximum-product-of-two-elements-in-an-array) |
 | [3026-maximum-good-subarray-sum](https://github.com/thesameer87/Leetcode/tree/master/3026-maximum-good-subarray-sum) |
+| [3731-find-missing-elements](https://github.com/thesameer87/Leetcode/tree/master/3731-find-missing-elements) |
 ## Hash Table
 |  |
 | ------- |
 | [0001-two-sum](https://github.com/thesameer87/Leetcode/tree/master/0001-two-sum) |
 | [3026-maximum-good-subarray-sum](https://github.com/thesameer87/Leetcode/tree/master/3026-maximum-good-subarray-sum) |
+| [3731-find-missing-elements](https://github.com/thesameer87/Leetcode/tree/master/3731-find-missing-elements) |
 ## Math
 |  |
 | ------- |
@@ -83,6 +85,7 @@ This repository contains Java solutions for various Data Structures and Algorith
 | ------- |
 | [0628-maximum-product-of-three-numbers](https://github.com/thesameer87/Leetcode/tree/master/0628-maximum-product-of-three-numbers) |
 | [1464-maximum-product-of-two-elements-in-an-array](https://github.com/thesameer87/Leetcode/tree/master/1464-maximum-product-of-two-elements-in-an-array) |
+| [3731-find-missing-elements](https://github.com/thesameer87/Leetcode/tree/master/3731-find-missing-elements) |
 ## Heap (Priority Queue)
 |  |
 | ------- |
