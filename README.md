@@ -64,6 +64,7 @@ This repository contains Java solutions for various Data Structures and Algorith
 | [0486-predict-the-winner](https://github.com/thesameer87/Leetcode/tree/master/0486-predict-the-winner) |
 | [0628-maximum-product-of-three-numbers](https://github.com/thesameer87/Leetcode/tree/master/0628-maximum-product-of-three-numbers) |
 | [0877-stone-game](https://github.com/thesameer87/Leetcode/tree/master/0877-stone-game) |
+| [0881-boats-to-save-people](https://github.com/thesameer87/Leetcode/tree/master/0881-boats-to-save-people) |
 | [1406-stone-game-iii](https://github.com/thesameer87/Leetcode/tree/master/1406-stone-game-iii) |
 | [1464-maximum-product-of-two-elements-in-an-array](https://github.com/thesameer87/Leetcode/tree/master/1464-maximum-product-of-two-elements-in-an-array) |
 | [3026-maximum-good-subarray-sum](https://github.com/thesameer87/Leetcode/tree/master/3026-maximum-good-subarray-sum) |
@@ -88,6 +89,7 @@ This repository contains Java solutions for various Data Structures and Algorith
 | ------- |
 | [0242-valid-anagram](https://github.com/thesameer87/Leetcode/tree/master/0242-valid-anagram) |
 | [0628-maximum-product-of-three-numbers](https://github.com/thesameer87/Leetcode/tree/master/0628-maximum-product-of-three-numbers) |
+| [0881-boats-to-save-people](https://github.com/thesameer87/Leetcode/tree/master/0881-boats-to-save-people) |
 | [1464-maximum-product-of-two-elements-in-an-array](https://github.com/thesameer87/Leetcode/tree/master/1464-maximum-product-of-two-elements-in-an-array) |
 | [3731-find-missing-elements](https://github.com/thesameer87/Leetcode/tree/master/3731-find-missing-elements) |
 ## Heap (Priority Queue)
@@ -147,4 +149,16 @@ This repository contains Java solutions for various Data Structures and Algorith
 |  |
 | ------- |
 | [0242-valid-anagram](https://github.com/thesameer87/Leetcode/tree/master/0242-valid-anagram) |
+## Two Pointers
+|  |
+| ------- |
+| [0881-boats-to-save-people](https://github.com/thesameer87/Leetcode/tree/master/0881-boats-to-save-people) |
+## Greedy
+|  |
+| ------- |
+| [0881-boats-to-save-people](https://github.com/thesameer87/Leetcode/tree/master/0881-boats-to-save-people) |
+## Timsort
+|  |
+| ------- |
+| [0881-boats-to-save-people](https://github.com/thesameer87/Leetcode/tree/master/0881-boats-to-save-people) |
 <!---LeetCode Topics End-->
