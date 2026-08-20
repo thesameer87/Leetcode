@@ -9,17 +9,21 @@
 
 ### Core Idea
 
-The submitted solution solves the Ransom Note problem by counting character frequencies using a `HashMap`. The core idea is to treat the `magazine` as a pool of available characters and `ransomNote` as a requirement list that consumes characters from that pool.
+The submitted solution solves the Ransom Note problem using a frequency counting approach backed by a `HashMap`. The fundamental goal is to determine if the `ransomNote` string can be constructed using individual characters from the `magazine` string, where each character in `magazine` can only be used once.
 
-First, the algorithm iterates through the `magazine` string and populates a map (`set`) where each character maps to its total occurrence count. Next, it iterates through each character in `ransomNote`. For every character, it checks if there are remaining instances available in the map. If available, it decrements the count in the map; if not available (or count is zero), it immediately returns `false`.
+To achieve this, the algorithm first iterates over the `magazine` string and builds a character frequency map. This map stores each distinct character as a key and its total occurrence count in `magazine` as the corresponding value. 
 
-This approach leverages the **Frequency Counter / HashMap** pattern. By converting character availability into counts, the order of characters in both strings becomes irrelevant, reducing the problem to a simple inventory check.
+Next, the algorithm iterates through each character of `ransomNote`. For every character, it checks whether that character exists in the frequency map with a count strictly greater than zero. If it does, the count is decremented by 1 to represent using that character. If any character in `ransomNote` is missing or has a count of zero in the map, the function immediately returns `false`. If the entire `ransomNote` is processed successfully, the function returns `true`.
+
+The primary DSA pattern utilized here is the **HashMap / Frequency Counting** pattern.
 
 ### Why This Approach?
 
-When considering how to check if `ransomNote` can be built from `magazine`, a naive approach might search `magazine` for each character in `ransomNote` and erase or mark matched characters. However, searching and modifying strings repeatedly leads to an inefficient $O(m \times n)$ time complexity, where $m$ is the length of `magazine` and $n$ is the length of `ransomNote`.
+When faced with matching character requirements between two strings where frequencies matter and order does not, we need a way to count and track available resources (characters from `magazine`) and consume them sequentially for demands (`ransomNote`).
 
-To optimize, we observe that character order does not matter; only the quantity of each character matters. By pre-counting character occurrences in `magazine`, we reduce lookups and updates to average $O(1)$ time complexity using a hash table. This reduces the overall time complexity to linear time $O(m + n)$.
+A naive brute-force approach might search for each character of `ransomNote` in `magazine` one by one, removing or marking found characters in `magazine`. Searching and modifying a string repeatedly takes $O(N \cdot M)$ time, where $N$ is the length of `ransomNote` and $M$ is the length of `magazine`. 
+
+By preprocessing `magazine` into a hash table, we can lookup and decrement character counts in $O(1)$ average time. This reduces the overall complexity to linear time, $O(N + M)$, making it significantly more efficient.
 
 ---
 
@@ -27,55 +31,55 @@ To optimize, we observe that character order does not matter; only the quantity 
 
 ### Step 1: Understand What We Need
 
-We need to determine if every character in `ransomNote` can be supplied by `magazine`, respecting both character identity and character count (each letter in `magazine` can only be used once).
+We need to check if `ransomNote` is a multiset subset of `magazine`. In plain terms: does `magazine` contain at least as many of each character as `ransomNote` requires?
 
 ### Step 2: Identify the Key Observation
 
-The problem is fundamentally about inventory management. `magazine` provides a inventory of letters, and `ransomNote` demands a specific quantity of each letter. We only need to verify:
-$$\text{Count of character } c \text{ in } \text{ransomNote} \le \text{Count of character } c \text{ in } \text{magazine}$$
+Character order and positions in either string do not matter. The only factor determining validity is character counts. If `magazine` has 3 `'a'`s and `ransomNote` needs 2 `'a'`s, that is valid. If `ransomNote` needs 4 `'a'`s, it is invalid.
 
 ### Step 3: Recognize the Pattern
 
-Because we need to track frequencies of discrete keys (`char`), a **HashMap** (or frequency array) is the ideal data structure. It allows $O(1)$ average time lookups, insertions, and updates.
+Whenever a problem asks to match items based on occurrence counts without regard to ordering, **Frequency Counting using a Hash Table or Array** is the standard pattern. Hash tables allow $O(1)$ updates and lookups for arbitrary character sets.
 
 ### Step 4: Decide What Information We Need to Maintain
 
-We need a map or lookup table to store:
-- **Key**: Character (`Character`)
-- **Value**: Remaining available count in `magazine` (`Integer`)
+We need a frequency map that records:
+- Key: `Character` (each character from `magazine`)
+- Value: `Integer` (the remaining available count of that character)
 
 ### Step 5: Derive the Algorithm
 
-1. Traverse `magazine` and record character frequencies into the hash map.
-2. Traverse `ransomNote` character by character:
-   - Check if the character exists in the map with a count greater than 0.
-   - If yes, decrement its count by 1.
-   - If no, return `false` because the inventory is exhausted or missing that letter.
-3. If all characters of `ransomNote` are successfully processed, return `true`.
+1. Traverse `magazine` and populate the frequency map.
+2. Traverse `ransomNote`. For each character:
+   - Check if the count in the frequency map is greater than `0`.
+   - If not, return `false` immediately (insufficient characters).
+   - If yes, decrement the character's count in the map by `1`.
+3. If all characters in `ransomNote` are processed successfully, return `true`.
 
 ---
 
 ## 🔍 Algorithm
 
-1. Initialize a `HashMap<Character, Integer>` named `set` to store character frequencies.
-2. Loop through `magazine` character by character, updating `set` by incrementing the count for each character using `set.getOrDefault(ch, 0) + 1`.
-3. Loop through `ransomNote` character by character:
-   - Use `set.getOrDefault(ch, 0)` to check remaining available instances.
-   - If the returned value is `0`, return `false` immediately.
-   - Otherwise, decrement the count of `ch` in `set` by `1`.
-4. If the loop completes without returning `false`, return `true`.
+1. Initialize a `HashMap<Character, Integer>` named `set` to store character frequencies from `magazine`.
+2. Iterate through each character of `magazine` from index `0` to `magazine.length() - 1`:
+   - Increment its count in `set` using `getOrDefault(ch, 0) + 1`.
+3. Iterate through each character of `ransomNote` from index `0` to `ransomNote.length() - 1`:
+   - Retrieve the current count using `set.getOrDefault(ch, 0)`.
+   - If the count is `0` (or character is absent), return `false`.
+   - Otherwise, update the map by decrementing the character count by `1`.
+4. Return `true` if the loop finishes without returning `false`.
 
 ### Important Implementation Details
 
-- `set` → `HashMap<Character, Integer>` used as a frequency map to store available character counts from `magazine`.
-- `set.getOrDefault(key, 0)` → Retrieves the current count of a character, returning `0` if the character was never present in `magazine`.
-- `set.getOrDefault(..., 0) == 0` → The failure condition checked before attempting to consume a character.
+- `HashMap<Character, Integer> set` → Stores available character inventory built from `magazine`.
+- `set.getOrDefault(key, 0)` → Safely retrieves the count of a character, returning `0` if the character has not been stored in the map yet.
+- `set.getOrDefault(ransomNote.charAt(i), 0) == 0` → Early termination condition when `ransomNote` demands a character that is unavailable or exhausted.
 
 ---
 
 ## 🧩 Understanding the Code
 
-### Phase 1: Frequency Map Construction
+### Phase 1: Building the Frequency Map from `magazine`
 
 ```java
 HashMap<Character, Integer> set = new HashMap<>();
@@ -84,9 +88,9 @@ for (int i = 0; i < magazine.length(); i++) {
 }
 ```
 
-This block loops through `magazine` and fills `set` with character frequencies. `getOrDefault` handles new characters gracefully by returning `0` before adding `1`.
+This block loops over every character in `magazine`. For each character, `getOrDefault` checks if it already exists in `set`. If it exists, it returns its current count; otherwise, it returns `0`. The code adds `1` to this count and puts it back into `set`, effectively counting character occurrences.
 
-### Phase 2: Consumption and Validation
+### Phase 2: Consuming Characters for `ransomNote`
 
 ```java
 for (int i = 0; i < ransomNote.length(); i++) {
@@ -98,17 +102,19 @@ for (int i = 0; i < ransomNote.length(); i++) {
 return true;
 ```
 
-This block iterates through `ransomNote`. If a required character is missing or has a count of `0`, the note cannot be formed, so it returns `false` early. Otherwise, it updates the map with the decremented count.
+This loop iterates through `ransomNote`. For each required character, it checks if there is at least one instance available in `set`. If `getOrDefault` returns `0`, it means `magazine` either never had this character or all instances have already been used up, so it returns `false`. Otherwise, it decrements the available count by `1`. If the loop completes, all required characters were successfully satisfied, so it returns `true`.
 
 ---
 
 ## 🧠 Why This Works
 
-The algorithm works because it enforces a exact 1-to-1 matching strategy for every character required by `ransomNote`. By maintaining exact counts of available characters, decrementing upon use, and terminating as soon as a required character count hits zero, it guarantees that no character from `magazine` is reused beyond its available occurrences.
+The algorithm guarantees correctness because it mirrors a real-world resource allocation process. `magazine` provides a pool of resources (letters), and `ransomNote` consumes them one by one. 
+
+By checking the count before consuming each character, we ensure that no letter from `magazine` is reused more times than it actually appears. Checking each character of `ransomNote` sequentially ensures that if any single character requirement fails, the overall construction is deemed impossible immediately.
 
 ### Key Invariant
 
-At the start of processing any character at index `i` of `ransomNote`, the map `set` contains the exact unconsumed frequency of every character from `magazine` after satisfying the prefix `ransomNote[0 ... i-1]`.
+At any point during the second loop (iteration `i` over `ransomNote`), the `HashMap` accurately reflects the exact remaining count of each character from `magazine` after satisfying the first `i` characters of `ransomNote`.
 
 ---
 
@@ -116,11 +122,13 @@ At the start of processing any character at index `i` of `ransomNote`, the map `
 
 **Time:** `O(m + n)`
 
+where `m` is the length of `magazine` and `n` is the length of `ransomNote`.
+
 ### Why?
 
-- **Magazine Pass:** Iterating over `magazine` takes $O(m)$ time, where $m$ is the length of `magazine`. Inserting into or updating a `HashMap` takes $O(1)$ time on average.
-- **Ransom Note Pass:** Iterating over `ransomNote` takes $O(n)$ time, where $n$ is the length of `ransomNote`. Map lookups and updates take $O(1)$ time on average.
-- Total time complexity is $O(m + n)$.
+- Building the `HashMap` takes `O(m)` time because we iterate through all `m` characters of `magazine`, performing `O(1)` average time operations for hash map lookups and insertions.
+- Validating against `ransomNote` takes `O(n)` time because we iterate through at most `n` characters of `ransomNote`, performing `O(1)` average time hash map lookups and updates per character.
+- Total time complexity is `O(m + n)`.
 
 ---
 
@@ -128,9 +136,11 @@ At the start of processing any character at index `i` of `ransomNote`, the map `
 
 **Auxiliary Space:** `O(k)`
 
-### Why?
+where `k` is the number of unique characters in `magazine`.
 
-The algorithm uses auxiliary space for the `HashMap`. The maximum number of entries in the map is bounded by $k$, the number of unique characters in `magazine`. Since `magazine` consists of lowercase English letters, $k \le 26$, making the auxiliary space bounded by $O(1)$ in terms of input size length.
+- The `HashMap` stores up to `k` unique characters.
+- If the input consists only of lowercase English letters, `k <= 26`, making the space effectively `O(1)`.
+- If the character set is arbitrary (e.g., Unicode), the space is upper-bounded by `O(k)`, where `k <= m`.
 
 ---
 
@@ -138,37 +148,37 @@ The algorithm uses auxiliary space for the `HashMap`. The maximum number of entr
 
 ### Alternative Idea
 
-Instead of using a `HashMap<Character, Integer>`, we can use a fixed-size primitive integer array `int[26]` (assuming lowercase English letters). Each index `0` to `25` corresponds to characters `'a'` to `'z'`.
+Instead of using a generic `HashMap`, we can use a fixed-size integer array `int[26]` as a direct-mapped frequency table, assuming the problem input consists only of lowercase English letters `'a'` through `'z'`. 
 
-This approach eliminates the overhead of object creation, autoboxing (`char` to `Character`, `int` to `Integer`), and hash calculations.
+Each character `'a'` through `'z'` maps directly to array index `ch - 'a'`. This eliminates object overhead (autoboxing `char` to `Character` and `int` to `Integer`), avoids hash collision handling, and reduces space usage to a tiny fixed-size memory footprint.
 
 ### Complexity
 
 **Time:** `O(m + n)`  
-**Space:** `O(1)`
+**Space:** `O(1)` (fixed size array of 26 integers)
 
 ### Comparison
 
 | Aspect | Submitted Approach (`HashMap`) | Alternative Approach (`int[26]` Array) |
 |---|---|---|
-| Main Idea | Dynamic `HashMap<Character, Integer>` | Fixed `int[26]` frequency array |
+| Main Idea | Dynamic key-value mapping | Fixed-size index mapping (`ch - 'a'`) |
 | Time | `O(m + n)` | `O(m + n)` |
-| Space | `O(k)` where $k \le 26$ | `O(1)` fixed size |
-| Advantage | Extensible to any character set (Unicode/ASCII) | Lower memory overhead, faster execution (no hashing or object wrapper overhead) |
+| Space | `O(k)` (up to 26 for English letters) | `O(1)` (fixed 26-element array) |
+| Advantage | Works for any character set (e.g., Unicode, ASCII) | Lower cache miss rate, no primitive boxing overhead |
 
 ---
 
 ## 📌 Key Takeaways
 
-- **Pattern:** HashMap / Frequency Array
-- **Core Observation:** The problem reduces to verifying if the available frequency of each character in the source string is greater than or equal to its required frequency in the target string.
-- **Important Data Structure:** `HashMap<Character, Integer>` (or `int[26]` array)
+- **Pattern:** Frequency Map / Hash Table
+- **Core Observation:** Construction depends solely on character availability counts, independent of character positions.
+- **Important Data Structure:** `HashMap<Character, Integer>` (or `int[26]` for lowercase alphabet constraint)
 - **Time:** `O(m + n)`
-- **Space:** `O(k)` where $k$ is the alphabet size
+- **Space:** `O(k)` where `k` is the number of unique characters
 
 ### Remember
 
-> When order does not matter and character counts dictate feasibility, convert strings into frequency counters to enable $O(1)$ lookups and updates.
+> When checking if one string can be constructed from another without positional constraints, count character frequencies first, then consume them while validating availability.
 
 ---
 
